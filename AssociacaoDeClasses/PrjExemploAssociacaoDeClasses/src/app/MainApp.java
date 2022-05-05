@@ -32,8 +32,8 @@ public class MainApp {
         Funcionario f2 = new Funcionario();
         f2.matricula = 101;
         f2.nome = "Maiara";
-        f2.salario = 2500.0F;
-        //f2.departamento = d1;          
+        f2.salario = -2500.0F;
+        f2.departamento = d1;          
         
         System.out.println("Dados do " + f1.nome);
         System.out.println("Matricula...: " + f1.matricula);
