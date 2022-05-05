@@ -14,6 +14,7 @@ public class Funcionario {
     private float salario;
     
     private Departamento departamento;
+    private Endereco endereco;
     
     public void setMatricula(int matricula) {
         this.matricula = matricula;
@@ -48,6 +49,16 @@ public class Funcionario {
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
+    
     
     
 }
