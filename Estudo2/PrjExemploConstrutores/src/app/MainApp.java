@@ -9,8 +9,10 @@ import domain.Cidade;
 import domain.Departamento;
 import domain.Endereco;
 import domain.Funcionario;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,9 +31,23 @@ public class MainApp {
         d2.setLocal("Bloco A");
         d2.setNome("Almoxarifado");
 
-        Cidade cidade = new Cidade();
-        cidade.setNome("Florianopolis");
-        cidade.setUf("SC");
+        Cidade cidade = new Cidade("Florianopolis","SC");
+//        cidade.setNome("Florianopolis");
+//        cidade.setUf("SC");
+
+        Cidade cidadeA = new Cidade();
+        cidadeA.setNome("Florianopolis");
+        cidadeA.setUf("SC");
+        
+        Cidade cidadeB = new Cidade("Ijuí", "RS");
+        System.out.println("Cidade " + cidadeB.getNome() + " - UF " + cidadeB.getUf() );
+
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Nome da cidade: ");
+        String nome = entrada.next();
+        System.out.print("UF da cidade: ");
+        String uf = entrada.next();
+        Cidade cidade2 = new Cidade(nome, uf);
 
         Bairro bairro = new Bairro();
         bairro.setNome("Trindade");
