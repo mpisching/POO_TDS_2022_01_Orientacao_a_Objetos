@@ -52,7 +52,7 @@ public class MainApp {
         f1.setMatricula(100);
         f1.setNome("Mauro");
         f1.setSalario(2000.0F);
-        f1.setDepartamento(d2);
+        f1.setDepartamento(d1);
         f1.setEndereco(endereco1);
 
         Funcionario f2 = new Funcionario();
@@ -75,6 +75,16 @@ public class MainApp {
 //        System.out.println("Salario.....: " + f2.getSalario());
 //        System.out.println("Departamento: " + f2.getDepartamento().getNome() + " - "
 //                + f2.getDepartamento().getLocal());
+
+        //o código abaixo é possível, 
+        //mas não é uma boa prática...é P E R I G O S O
+        //Porque as variáveis não possuem vínculo algum com o funcionário,
+        //elas estão sendo tratadas isoladamente.
+        System.out.println("Nome do funcionario: " + f1.getNome());
+        System.out.println("Endereco: " + endereco1.getLogradouro());
+        System.out.println("Cidade: " + cidade.getNome());
+        System.out.println("Bairro: " + bairro.getNome());
+        System.out.println("Depto: " + d1.getNome());
 
     }
 
