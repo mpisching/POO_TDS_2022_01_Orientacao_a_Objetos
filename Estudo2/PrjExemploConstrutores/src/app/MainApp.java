@@ -49,21 +49,29 @@ public class MainApp {
         String uf = entrada.next();
         Cidade cidade2 = new Cidade(nome, uf);
 
-        Bairro bairro = new Bairro();
-        bairro.setNome("Trindade");
+        Bairro bairro = new Bairro("Trindade");
+        //bairro.setNome("Trindade");
 
-        Endereco endereco1 = new Endereco();
+        //Endereco endereco1 = new Endereco();//o construtor padrão deixou de existir
+        Endereco endereco1 = new Endereco("Rua palmeiras", 66);
         endereco1.setBairro(bairro);
         endereco1.setCidade(cidade);
-        endereco1.setLogradouro("Rua palmeiras");
-        endereco1.setNumero(66);
+        //endereco1.setLogradouro("Rua palmeiras");
+        //endereco1.setNumero(66);
         endereco1.setComplemento("Casa");
 
-        Endereco endereco2 = new Endereco();
-        endereco2.setBairro(bairro);
-        endereco2.setCidade(cidade);
-        endereco2.setLogradouro("Rua Acácia");
-        endereco2.setNumero(876);
+        Cidade cidade3 = new Cidade("Ijui", "RS");
+        Bairro bairro3 = new Bairro("Assis Brasil");
+        Endereco endereco2 = new Endereco("Rua Acácia", 876, cidade3, bairro3);
+        //Endereco enderecox = new Endereco("Rua Acácia", 876, "Ijui", "Assis Brasil");
+        
+        Endereco endereco3 = new Endereco("Rua Niteroi", 1234, new Cidade("São José", "SC"), 
+                new Bairro("Campinas"));
+        
+        //endereco2.setBairro(bairro);
+        //endereco2.setCidade(cidade);
+        //endereco2.setLogradouro("Rua Acácia");
+        //endereco2.setNumero(876);
         endereco2.setComplemento("Apto 999");
 
         Funcionario f1 = new Funcionario();
