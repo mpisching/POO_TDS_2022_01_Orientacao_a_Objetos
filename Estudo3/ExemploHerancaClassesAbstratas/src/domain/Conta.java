@@ -8,9 +8,21 @@ package domain;
  *
  * @author mpisc
  */
-public class Conta extends Object {
+public abstract class Conta extends Object {
     private int numero;
     private double saldo;
+    
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
+    
 
     public int getNumero() {
         return numero;
@@ -50,8 +62,5 @@ public class Conta extends Object {
     public String toString() {
         return "Conta{" + "numero=" + numero + ", saldo=" + saldo + '}';
     }
-    
-
-    
     
 }
