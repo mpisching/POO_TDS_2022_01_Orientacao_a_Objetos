@@ -8,7 +8,7 @@ package domain;
  *
  * @author mpisc
  */
-public abstract class Conta extends Object implements IOperacao {
+public abstract class Conta extends Object {
     private int numero;
     private double saldo;
     
