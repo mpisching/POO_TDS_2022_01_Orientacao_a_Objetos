@@ -4,6 +4,7 @@
  */
 package smarthome;
 
+import domain.Abertura;
 import domain.Basculante;
 import domain.Correr;
 import domain.Giratoria;
@@ -31,36 +32,48 @@ public class SmartHome {
         
         Janela janela1 = new Janela(local1);
         Janela janela2 = new Janela(local2);
+        janela1.setDistanciaDoPiso(110);
+        janela2.setDistanciaDoPiso(220);
+        
         
         Porta p1 = new Correr(local1);
         Porta p2 = new Giratoria(local2);
         Porta p3 = new Basculante(local3);
         
-        List<Porta> portas = new ArrayList<>();
-        List<Janela> janelas = new ArrayList<>();
+        //List<Porta> portas = new ArrayList<>();
+        //List<Janela> janelas = new ArrayList<>();
+        List<Abertura> aberturas = new ArrayList<>();
         
-        portas.add(p1);
-        portas.add(p2);
-        portas.add(p3);
-        portas.add(new Correr(local2));
+        aberturas.add(p1);
+        aberturas.add(p2);
+        aberturas.add(p3);
+        aberturas.add(new Correr(local2));
         //portas.remove(p1);
         
-        janelas.add(janela1);
-        janelas.add(janela2);
+        aberturas.add(janela1);
+        aberturas.add(janela2);
+        
+        for (Abertura a: aberturas) {
+            imprimir(a);
+        }
         
 //      fechar(janela1);
  //       travar(janela1);
         
-        destravar(janela1);
-        abrir(janela1);
-        destravar(janela2);
-        abrir(janela2);   
+//        destravar(janela1);
+//        abrir(janela1);
+//        destravar(janela2);
+//        abrir(janela2);   
         
         //destravar e abrir todas as portas
-        for (Porta p: portas) {//for apriomorado ou foreach
-            destravar(p);
-            abrir(p);
+        for (Abertura a: aberturas) {//for apriomorado ou foreach
+            destravar(a);
+            abrir(a);
         }
+        
+        for (Abertura a: aberturas) {
+            imprimir(a);
+        }        
 //        destravar(p1);
 //        abrir(p1);
 //        destravar(p2);
@@ -68,17 +81,22 @@ public class SmartHome {
 //        destravar(p3);
 //        abrir(p3);
 //        
-        fechar(janela1);
-        travar(janela1);        
-        fechar(janela2);
-        travar(janela2);    
-        
-        //fechar(p1);
-        //travar(p1);
-        fechar(p2);
-        travar(p2);
-        fechar(p3);
-        travar(p3);
+
+        for (Abertura a: aberturas) {
+            fechar(a);
+            travar(a);
+        }
+//        fechar(janela1);
+//        travar(janela1);        
+//        fechar(janela2);
+//        travar(janela2);    
+//        
+//        //fechar(p1);
+//        //travar(p1);
+//        fechar(p2);
+//        travar(p2);
+//        fechar(p3);
+//        travar(p3);
         
     }
     
@@ -96,5 +114,13 @@ public class SmartHome {
     
     public static void destravar(IFechadura fechadura) {
         fechadura.destravar();
+    }
+    
+    public static void imprimir(Abertura a) {
+        System.out.println(a.getClass().getSimpleName() + " localização: " + a.getLocal().getDescricao());
+        System.out.println("Fechada e travada? " + a.getStatus());
+        if (a instanceof Janela janela) {
+            System.out.println("Distância do piso: " + janela.getDistanciaDoPiso());
+        }
     }
 }
