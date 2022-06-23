@@ -66,20 +66,20 @@ public class CupomFiscal {
         SimpleDateFormat sdfHora = new SimpleDateFormat("hh:mm:ss");
         StringBuilder sb = new StringBuilder();
         sb.append("**** CUPOM FISCAL ****").append("\n");
-        sb.append("Data: " ).append(sdfData.format(data)).append("    Hora: ").
-                append(sdfHora.format(hora)).append("   COD: ").append(numero).
+        sb.append("Data: " ).append(sdfData.format(data)).append("  Hora: ").
+                append(sdfHora.format(hora)).append("  COD: ").append(numero).
                 append("\n");
-        sb.append("=============================").append("\n");
+        sb.append("=============================================").append("\n");
         int i = 0;
         for (ItemCupom ic: itensCupom) {
-            sb.append(++i).append(" ").append(ic.getProduto().getCodigo()).append("  ").
+            sb.append(++i).append(" ").append(ic.getProduto().getCodigo()).append(" ").
                     append(ic.getProduto().getDescricao()).
-                    append("  ").append(ic.getQuantidade()).append("   ").
-                    append(ic.getPrecoComDesconto()).append("   ").
+                    append("\t").append(ic.getQuantidade()).append("\t").
+                    append(ic.getPrecoComDesconto()).append("\t\t").
                     append(ic.calcularTotal()).append("\n");
         }
-        sb.append("=============================").append("\n");
-        sb.append("TOTAL              ").append(calcularTotalCupom()).append("\n");
+        sb.append("=============================================").append("\n");
+        sb.append("TOTAL\t\t\t\t\t").append(calcularTotalCupom()).append("\n");
         sb.append("Obrigado pela preferência!!!").append("\n");
         return sb.toString();
     }
