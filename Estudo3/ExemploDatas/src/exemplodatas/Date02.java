@@ -22,7 +22,7 @@ public class Date02 {
         int hora = hoje.get(Calendar.HOUR_OF_DAY);
         int minutos = hoje.get(Calendar.MINUTE);
         int segundos = hoje.get(Calendar.SECOND);
-
+        
         System.out.printf("Hoje é : %02d/%02d/%d %02d:%02d:%02d",
                 dia, (mes + 1), ano, hora, minutos, segundos);
 
