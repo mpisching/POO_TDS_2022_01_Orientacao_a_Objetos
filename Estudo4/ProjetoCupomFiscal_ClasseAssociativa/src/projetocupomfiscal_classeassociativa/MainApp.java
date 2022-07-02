@@ -23,7 +23,7 @@ public class MainApp {
         Produto p2 = new Produto(1235, "Perfume", "Perfumaria", 320.00);
         Produto p3 = new Produto(1236, "Sapato", "Calçados", 220.00);
         
-        CupomFiscal cf1 = null;//  new CupomFiscal();
+        CupomFiscal cf1 = new CupomFiscal();
         cf1.setData(new Date());
         cf1.setHora(new Date());
         cf1.setNumero(1);
